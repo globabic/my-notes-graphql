@@ -37,7 +37,7 @@ class List extends Component {
   return (
 
       <div id="notes-list">
-        <p>Item counter: {this.countItems()}</p>
+        <p>{this.countItems()} items</p>
         <ul>
           {this.displayNotes()}
         </ul>
