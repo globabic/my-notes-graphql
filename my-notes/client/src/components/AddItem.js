@@ -40,7 +40,7 @@ class AddIteam extends Component {
   render(){
     return(
       <form id="add-item" onSubmit={this.submitForm.bind(this)}>
-          <input type="text" onChange={(e) => this.setState({content: e.target.value})}/>
+          <input placeholder="Enter your note..." type="text" onChange={(e) => this.setState({content: e.target.value})}/>
           <input type="submit" value="Add" />
       </form>
     )

@@ -40,7 +40,7 @@
 }
 
 .list-item-delete{
-  margin-right: 2em;
+  margin-right: 1em;
   text-align: right;
   cursor: pointer;
   width: 30px;
@@ -59,7 +59,7 @@
 }
 
 .list-item-edit{
-margin-right: 2em;
+margin-right: 1em;
   text-align: right;
   cursor: pointer;
   width: 30px;
@@ -67,4 +67,5 @@ margin-right: 2em;
 
 .list-item-date{
 float: right;
+margin-right: 10px;
 }
