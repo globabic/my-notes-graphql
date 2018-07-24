@@ -14,20 +14,11 @@ class AddIteam extends Component {
    }//constructor
    submitForm(e){
      e.preventDefault();
-     let today = new Date();
-     today.setMinutes(2);
-     let date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear() + ' ' + addZero(today.getHours()) + ':' + addZero(today.getMinutes());
-     function addZero(i) {
-
-    if (i < 10) {
-        i = "0" + i;
-    }
-    return i;
-  }
+     let date = new Date().toLocaleString('en-GB', {hour12: false}).split(',');
      this.props.addNoteMutation({
        variables:{
          content: this.state.content,
-         date: date
+         date: date.toLocaleString()
        },
        refetchQueries: [{query: getNotesQuery}]
      }

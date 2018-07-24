@@ -37,16 +37,15 @@ class ListItem extends Component {
    );
  }//handleDelete
   handleEdit(){
-    
+
     let newValue = prompt("Edit your note: ", this.props.item);
-    let today = new Date();
-    let date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear() + ' ' + today.getHours() + ':' + today.getMinutes();
+    let date = new Date().toLocaleString('en-GB', {hour12: false}).split(',');
     if(newValue != null){
       this.props.editNoteMutation({
         variables:{
           id: this.props.id,
           content: newValue,
-          date: date
+          date: date.toLocaleString()
         },
         refetchQueries: [{query: getNotesQuery}]
       }
