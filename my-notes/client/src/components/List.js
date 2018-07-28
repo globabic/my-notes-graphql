@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import ApolloClient from 'apollo-boost';
-import {ApolloProvider, graphql} from 'react-apollo';
+import {graphql} from 'react-apollo';
 import {getNotesQuery} from '../queries/queries';
 
 import '../css/list.css';
@@ -16,6 +15,8 @@ class List extends Component {
     let data = this.props.data;
     if(data.loading){
       return(<div>Loading...</div>)
+    }else if(data.notes === undefined || data.notes.length === 0){
+      return(<div>Add a new note</div>)
     }else{
       return data.notes.map(note =>{
         return(
@@ -30,7 +31,7 @@ class List extends Component {
       return "Calculating..."
     }else{
       let notes = data.notes;
-      return notes.length;
+      return notes ? notes.length : 0;
     }
   }
   render() {

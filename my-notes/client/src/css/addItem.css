@@ -22,3 +22,7 @@
     text-transform: uppercase;
     cursor: pointer;
 }
+
+input.error {
+    box-shadow: 0 0 3px #CC0000;
+}

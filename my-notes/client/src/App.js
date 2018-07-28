@@ -3,8 +3,6 @@ import ApolloClient from 'apollo-boost';
 import {ApolloProvider} from 'react-apollo';
 
 //components
-import ListItem from './components/ListItem';
-import AddItem from './components/AddItem';
 import List from './components/List';
 
 
